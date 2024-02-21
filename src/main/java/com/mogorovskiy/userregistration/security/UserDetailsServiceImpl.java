@@ -1,11 +1,13 @@
 package com.mogorovskiy.userregistration.security;
 
-import com.mogorovskiy.userregistration.entity.*;
-import com.mogorovskiy.userregistration.repository.*;
-import lombok.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.security.core.userdetails.*;
-import org.springframework.stereotype.*;
+import com.mogorovskiy.userregistration.entity.UserEntity;
+import com.mogorovskiy.userregistration.repository.UserRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor

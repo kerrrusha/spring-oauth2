@@ -6,7 +6,8 @@ import org.springframework.security.core.*;
 import org.springframework.security.core.authority.*;
 import org.springframework.security.core.userdetails.*;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
