@@ -35,7 +35,7 @@ public class SecurityConfig {
                                 .loginPage("/login")
                                 .permitAll()
                 )
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+//                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .logout(LogoutConfigurer::permitAll)
                 .build();
     }

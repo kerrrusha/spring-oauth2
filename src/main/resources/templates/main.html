@@ -34,13 +34,12 @@
 </head>
 <body>
 <div class="container">
-    <h1 th:text="'Hello ' + ${#authentication.getPrincipal().getName()}"></h1>
+    <h1 th:text="'Hello ' + ${#authentication.getPrincipal().getUsername()}"></h1>
     <div class="info-container">
         <table class="table table-striped">
             <thead>
             <tr>
                 <th scope="col">id</th>
-                <th scope="col">name</th>
                 <th scope="col">email</th>
                 <th scope="col">password</th>
             </tr>
@@ -48,7 +47,6 @@
             <tbody>
             <tr th:each="user: ${users}">
                 <td th:text="${user.getId()}"></td>
-                <td th:text="${user.getName()}"></td>
                 <td th:text="${user.getEmail()}"></td>
                 <td th:text="${user.getPassword()}"></td>
             </tr>
