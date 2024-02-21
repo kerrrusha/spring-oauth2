@@ -58,10 +58,17 @@
                     <div th:if="${param.logout}" class="alert alert-success" role="alert">
                         You have been logged out.
                     </div>
+
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr><td><a href="/oauth2/authorization/github">GitHub</a></td></tr>
+                        <tr><td><a href="/oauth2/authorization/google">Google</a></td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="text-center mt-3">
-                <a href="/registration">Регистрация</a>
+                <a href="/registration">Register</a>
             </div>
         </div>
     </div>
