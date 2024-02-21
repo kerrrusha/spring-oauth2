@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user-role-table
+      author: kerrrusha
+      changes:
+        - createTable:
+            tableName: user_role
+            columns:
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    references: user(id)
+                    foreignKeyName: fk_user_role_user_id
+                    deleteCascade: true
+                    primaryKey: true
+              - column:
+                  name: role_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    references: role(id)
+                    foreignKeyName: fk_user_role_role_id
+                    deleteCascade: true
+                    primaryKey: true
+            primaryKey:
+              columnNames: user_id, role_id
+      rollback:
+        - dropTable:
+            tableName: user_role

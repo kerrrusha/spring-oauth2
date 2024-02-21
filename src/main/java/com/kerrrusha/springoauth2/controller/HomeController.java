@@ -1,6 +1,6 @@
-package com.mogorovskiy.userregistration.controller;
+package com.kerrrusha.springoauth2.controller;
 
-import com.mogorovskiy.userregistration.service.UserService;
+import com.kerrrusha.springoauth2.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,18 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @AllArgsConstructor
-public class MainController {
+public class HomeController {
+
     private final UserService userService;
 
     @GetMapping("/")
     public String main(Model model) {
-        model.addAttribute("users", userService.getAll());
+        model.addAttribute("users", userService.findAll());
         return "main";
-    }
-
-    @GetMapping("/login")
-    public String login() {
-        return "login";
     }
 }
 

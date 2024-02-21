@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-role-table
+      author: kerrrusha
+      changes:
+        - createTable:
+            tableName: role
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: deleted
+                  type: BOOLEAN
+                  defaultValue: false
+                  constraints:
+                    nullable: false
+      rollback:
+        - dropTable:
+            tableName: role

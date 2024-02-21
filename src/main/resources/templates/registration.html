@@ -41,7 +41,7 @@
                     <h3 class="card-title">Registration</h3>
                 </div>
                 <div class="card-body">
-                    <form th:action="@{/registration}" method="post" th:object="${userEntity}">
+                    <form th:action="@{/registration}" method="post" th:object="${user}">
                         <div class="mb-3">
                             <input th:field="*{name}" type="text" class="form-control" name="name" id="name" placeholder="Username" required>
                         </div>
