@@ -43,10 +43,15 @@
                 <div class="card-body">
                     <form th:action="@{/registration}" method="post" th:object="${user}">
                         <div class="mb-3">
-                            <input th:field="*{name}" type="text" class="form-control" name="name" id="name" placeholder="Username" required>
+                            <input th:field="*{firstName}" type="text" class="form-control"
+                                   name="name" id="first-name" placeholder="First name" required>
                         </div>
                         <div class="mb-3">
-                            <input th:field="*{email}" type="text" class="form-control" name="email" id="email" placeholder="Email" required>
+                            <input th:field="*{lastName}" type="text" class="form-control"
+                                   name="name" id="last-name" placeholder="Last name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input th:field="*{email}" type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                         </div>
                         <div class="mb-3">
                             <input th:field="*{password}" type="password" class="form-control" name="password" id="password" placeholder="Password" required>
