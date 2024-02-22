@@ -9,14 +9,17 @@
         body {
             background-color: #f8f9fa;
         }
+
         .login-container {
             margin-top: 100px;
         }
+
         .card {
             border: 1px solid #ced4da;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .card-header {
             background-color: #007bff;
             color: #fff;
@@ -24,9 +27,11 @@
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
         }
+
         .form-control {
             border-radius: 6px;
         }
+
         .login-button {
             border-radius: 6px;
         }
@@ -59,12 +64,20 @@
                         You have been logged out.
                     </div>
 
-                    <table class="table table-striped">
-                        <tbody>
-                        <tr><td><a href="/oauth2/authorization/github" target="_blank">GitHub</a></td></tr>
-                        <tr><td><a href="/oauth2/authorization/google" target="_blank">Google</a></td></tr>
-                        </tbody>
-                    </table>
+                    <div class="d-flex flex-column justify-content-center gap-3 align-items-center">
+                        <a class="btn btn-outline-secondary btn-lg px-4 rounded-pill w-100" href="/oauth2/authorization/google">
+                            <div class="d-flex flex-row align-items-center justify-content-center gap-2 ">
+                                <img width="36" height="36" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo"/>
+                                <span>Sign in with Google</span>
+                            </div>
+                        </a>
+                        <a class="btn btn-outline-secondary btn-lg px-4 rounded-pill w-100" href="/oauth2/authorization/github">
+                            <div class="d-flex flex-row align-items-center justify-content-center gap-2 ">
+                                <img width="36" height="36" src="https://img.icons8.com/ios-filled/50/github.png" alt="github-logo"/>
+                                <span>Sign in with Github</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="text-center mt-3">
