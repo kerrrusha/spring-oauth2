@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -27,19 +26,18 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(
                         auth -> auth
-                                .requestMatchers("/registration")
+                                .requestMatchers("/auth/**", "/oauth2/**")
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated()
                 )
-                .formLogin(
+                .oauth2Login(
                         form -> form
-                                .loginPage("/login")
+                                .loginPage("/auth/login")
                                 .permitAll()
                 )
-//                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .oauth2Login(withDefaults())
-                .logout(LogoutConfigurer::permitAll)
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
+                .logout(withDefaults())
                 .build();
     }
 
